@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>2026 Division of Industrial Design Graduation Show - Coming Soon</title>
+    <link rel="icon" type="image/png" href="assets/logo2026VerticalStaggered.png">
+    <link rel="apple-touch-icon" href="assets/logo2026VerticalStaggered.png">
     <link rel="stylesheet" href="styles.css">
     <style>
         /* Custom header for loading page - logo aligned left */
@@ -183,6 +185,58 @@
             opacity: 0.7;
         }
 
+        a.loading8-icon-btn {
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .loading8-share-wrap {
+            position: relative;
+            display: inline-flex;
+        }
+
+        .loading8-share-menu {
+            position: absolute;
+            bottom: calc(100% + 0.35rem);
+            right: 0;
+            min-width: 11rem;
+            padding: 0.35rem 0;
+            background: var(--background-light);
+            border: 1px solid rgba(41, 18, 76, 0.14);
+            border-radius: 6px;
+            box-shadow: 0 8px 28px rgba(41, 18, 76, 0.12);
+            z-index: 1101;
+        }
+
+        .loading8-share-menu[hidden] {
+            display: none !important;
+        }
+
+        .loading8-share-item {
+            display: block;
+            width: 100%;
+            padding: 0.5rem 0.85rem;
+            font-family: inherit;
+            font-size: 0.8125rem;
+            font-weight: 500;
+            letter-spacing: 0.04em;
+            color: var(--text-dark);
+            background: none;
+            border: none;
+            cursor: pointer;
+            text-align: left;
+            text-decoration: none;
+            transition: background 0.15s ease;
+        }
+
+        .loading8-share-item:hover,
+        .loading8-share-item:focus-visible {
+            background: rgba(41, 18, 76, 0.07);
+            outline: none;
+        }
+
         .loading8-footer-logo {
             display: flex;
             align-items: flex-end;
@@ -288,7 +342,7 @@
         <!-- Custom Header - Logo aligned right, no nav links -->
         <nav class="loading-page-header">
             <div class="logo-container">
-                <a href="index.html">
+                <a href="https://cde.nus.edu.sg/did/gradshows/2026/">
                     <!-- <img src="./assets/logoGroup2.svg" alt="2026" class="logo-year"> -->
                     <img src="./assets/logoDIDHorizontal.png" alt="Division of Industrial Design Graduation Show"
                         class="loading8-logo-text">
@@ -305,7 +359,8 @@
             <div class="loading-container loading8-container">
                 <p class="coming-soon loading8-coming-soon">SEE HOW WE DID IT!</p>
                 <div class="loading-image-wrapper loading8-image-wrapper">
-                    <img id="loadingImage" src="././assets/loadingPhotos/Screenshot 2026-02-26 154921.png" alt="Loading">
+                    <img id="loadingImage" src="././assets/loadingPhotos/Screenshot 2026-02-26 154921.png"
+                        alt="Loading">
                     <video id="loadingVideo" class="loading8-loop-video" src="./assets/loadingPhotos/C0804.mp4" loop
                         muted playsinline preload="auto" aria-hidden="true"></video>
                 </div>
@@ -323,25 +378,43 @@
                         <p class="venue-time loading8-venue-time">10AM - 8PM</p>
                     </div>
                     <div class="venue-icons loading8-venue-icons">
-                        <button class="loading8-icon-btn" aria-label="Location">
+                        <a class="loading8-icon-btn" href="https://maps.app.goo.gl/fa3Wj8d9EWuB1vJaA"
+                            target="_blank" rel="noopener noreferrer" aria-label="Location">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                stroke-linejoin="round">
+                                stroke-linejoin="round" aria-hidden="true">
                                 <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
                                 <circle cx="12" cy="10" r="3"></circle>
                             </svg>
-                        </button>
-                        <button class="loading8-icon-btn" aria-label="Share">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                stroke-linejoin="round">
-                                <circle cx="18" cy="5" r="3"></circle>
-                                <circle cx="6" cy="12" r="3"></circle>
-                                <circle cx="18" cy="19" r="3"></circle>
-                                <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line>
-                                <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line>
-                            </svg>
-                        </button>
+                        </a>
+                        <div class="loading8-share-wrap" data-share-url="">
+                            <button type="button" class="loading8-icon-btn" id="loading8ShareBtn"
+                                aria-label="Share" aria-expanded="false" aria-haspopup="true"
+                                aria-controls="loading8ShareMenu">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" aria-hidden="true">
+                                    <circle cx="18" cy="5" r="3"></circle>
+                                    <circle cx="6" cy="12" r="3"></circle>
+                                    <circle cx="18" cy="19" r="3"></circle>
+                                    <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line>
+                                    <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line>
+                                </svg>
+                            </button>
+                            <div id="loading8ShareMenu" class="loading8-share-menu" role="group"
+                                aria-label="Share on social media" hidden>
+                                <a class="loading8-share-item" data-share="telegram" href="#" target="_blank"
+                                    rel="noopener noreferrer">Telegram</a>
+                                <button type="button" class="loading8-share-item" data-share="instagram">
+                                    Instagram</button>
+                                <a class="loading8-share-item" data-share="linkedin" href="#" target="_blank"
+                                    rel="noopener noreferrer">LinkedIn</a>
+                                <a class="loading8-share-item" data-share="whatsapp" href="#" target="_blank"
+                                    rel="noopener noreferrer">WhatsApp</a>
+                                <a class="loading8-share-item" data-share="threads" href="#" target="_blank"
+                                    rel="noopener noreferrer">Threads</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -441,6 +514,119 @@
 
             setTimeout(switchToLoopVideo, photoPhaseDurationMs);
         });
+
+        (function initLoading8ShareMenu() {
+            var wrap = document.querySelector('.loading8-share-wrap');
+            var btn = document.getElementById('loading8ShareBtn');
+            var menu = document.getElementById('loading8ShareMenu');
+            if (!wrap || !btn || !menu) return;
+
+            var dataUrl = (wrap.getAttribute('data-share-url') || '').trim();
+            function getShareUrl() {
+                if (dataUrl) return dataUrl;
+                if (window.location.protocol === 'http:' || window.location.protocol === 'https:') {
+                    return window.location.href.split('#')[0];
+                }
+                return '';
+            }
+
+            function buildSharePayload() {
+                var shareUrl = getShareUrl();
+                var shareText = (document.title || '').trim();
+                var line = shareText && shareUrl ? shareText + '\n' + shareUrl : (shareUrl || shareText);
+                return { shareUrl: shareUrl, shareText: shareText, line: line };
+            }
+
+            function applyShareLinks() {
+                var p = buildSharePayload();
+                var u = p.shareUrl;
+                var t = p.shareText;
+                var line = p.line;
+
+                var tg = menu.querySelector('[data-share="telegram"]');
+                if (tg) {
+                    tg.href = u
+                        ? 'https://t.me/share/url?url=' + encodeURIComponent(u) + '&text=' + encodeURIComponent(t)
+                        : '#';
+                }
+                var li = menu.querySelector('[data-share="linkedin"]');
+                if (li) {
+                    li.href = u ? 'https://www.linkedin.com/sharing/share-offsite/?url=' + encodeURIComponent(u) : '#';
+                }
+                var wa = menu.querySelector('[data-share="whatsapp"]');
+                if (wa) {
+                    wa.href = line ? 'https://api.whatsapp.com/send?text=' + encodeURIComponent(line) : '#';
+                }
+                var th = menu.querySelector('[data-share="threads"]');
+                if (th) {
+                    th.href = line ? 'https://www.threads.net/intent/post?text=' + encodeURIComponent(line) : '#';
+                }
+            }
+
+            function setOpen(open) {
+                menu.hidden = !open;
+                btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+                if (open) applyShareLinks();
+            }
+
+            btn.addEventListener('click', function (e) {
+                e.stopPropagation();
+                setOpen(menu.hidden);
+            });
+
+            document.addEventListener('click', function () {
+                if (!menu.hidden) setOpen(false);
+            });
+
+            document.addEventListener('keydown', function (e) {
+                if (e.key === 'Escape' && !menu.hidden) setOpen(false);
+            });
+
+            wrap.addEventListener('click', function (e) {
+                e.stopPropagation();
+            });
+
+            var igBtn = menu.querySelector('[data-share="instagram"]');
+            if (igBtn) {
+                igBtn.addEventListener('click', function () {
+                    var p = buildSharePayload();
+                    var textToCopy = p.line || p.shareUrl || p.shareText;
+                    if (!textToCopy) return;
+
+                    function feedback() {
+                        var orig = igBtn.textContent;
+                        igBtn.textContent = 'Link copied';
+                        setTimeout(function () { igBtn.textContent = orig; }, 1800);
+                    }
+
+                    if (navigator.clipboard && navigator.clipboard.writeText) {
+                        navigator.clipboard.writeText(textToCopy).then(feedback).catch(function () { });
+                    } else {
+                        try {
+                            var ta = document.createElement('textarea');
+                            ta.value = textToCopy;
+                            ta.setAttribute('readonly', '');
+                            ta.style.position = 'fixed';
+                            ta.style.left = '-9999px';
+                            document.body.appendChild(ta);
+                            ta.select();
+                            document.execCommand('copy');
+                            document.body.removeChild(ta);
+                            feedback();
+                        } catch (err) { }
+                    }
+                    setOpen(false);
+                });
+            }
+
+            menu.querySelectorAll('a.loading8-share-item').forEach(function (a) {
+                a.addEventListener('click', function (e) {
+                    var href = a.getAttribute('href');
+                    if (!href || href === '#') e.preventDefault();
+                    setOpen(false);
+                });
+            });
+        })();
     </script>
 </body>
 
