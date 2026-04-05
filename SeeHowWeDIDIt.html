@@ -200,8 +200,10 @@
         .loading8-share-menu {
             position: absolute;
             bottom: calc(100% + 0.35rem);
-            right: 0;
+            left: 0;
+            right: auto;
             min-width: 11rem;
+            max-width: min(12rem, calc(100vw - 2rem));
             padding: 0.35rem 0;
             background: var(--background-light);
             border: 1px solid rgba(41, 18, 76, 0.14);
@@ -515,6 +517,18 @@
             setTimeout(switchToLoopVideo, photoPhaseDurationMs);
         });
 
+        const LOADING8_SHARE_BODY = `We warmly invite you to join us at the DID Graduation Show 2026.
+
+This year's Gradshow celebrates the design journeys behind the graduating cohort from the Division of Industrial Design, shaped by curiosity, rigor, and intent.
+
+The works on display sit at the intersection of play and precision, imagination and purpose. This duality reflects how our students think, make and adapt.
+
+In an ever evolving world, we stay ready for what's next.
+
+#SeeHowWeDidIt.
+
+2026 Division of Industrial Design Graduation Show — Coming Soon. Check it out!`.trim();
+
         (function initLoading8ShareMenu() {
             var wrap = document.querySelector('.loading8-share-wrap');
             var btn = document.getElementById('loading8ShareBtn');
@@ -532,8 +546,8 @@
 
             function buildSharePayload() {
                 var shareUrl = getShareUrl();
-                var shareText = (document.title || '').trim();
-                var line = shareText && shareUrl ? shareText + '\n' + shareUrl : (shareUrl || shareText);
+                var shareText = LOADING8_SHARE_BODY;
+                var line = shareText + (shareUrl ? '\n\n' + shareUrl : '');
                 return { shareUrl: shareUrl, shareText: shareText, line: line };
             }
 
