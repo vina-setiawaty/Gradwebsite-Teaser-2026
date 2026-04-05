@@ -515,17 +515,19 @@
                                     </span>
                                     <span class="loading8-share-label">WhatsApp</span>
                                 </a>
-                                <a class="loading8-share-item" data-share="threads" href="#" target="_blank"
-                                    rel="noopener noreferrer">
+                                <a class="loading8-share-item"
+                                    href="https://www.instagram.com/nusdidshow.26?igsh=c3B4ZnZnZHF2bGI0"
+                                    target="_blank" rel="noopener noreferrer">
                                     <span class="loading8-share-icon-wrap" aria-hidden="true">
                                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
                                             stroke="currentColor" stroke-width="2" stroke-linecap="round"
                                             stroke-linejoin="round">
-                                            <circle cx="12" cy="12" r="4"></circle>
-                                            <path d="M16 8v5a3 3 0 0 0 6 0v-1a10 10 0 1 0-12 9"></path>
+                                            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                                            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                                            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
                                         </svg>
                                     </span>
-                                    <span class="loading8-share-label">Threads</span>
+                                    <span class="loading8-share-label">Check our Instagram</span>
                                 </a>
                                 <button type="button"
                                     class="loading8-share-item loading8-share-item--more"
@@ -588,8 +590,8 @@
         ];
 
         // SLIDESHOW SETTINGS
-        const slideshowInterval = 300;  // Time between photos in milliseconds (0.5 seconds)
-        const photoPhaseDurationMs = 27 * 1000;  // Then switch to looping video
+        const slideshowInterval = 300;  // Time between photos in milliseconds (0.3 seconds)
+        const photoPhaseDurationMs = 16.2 * 1000;  // Then switch to looping video
 
         // Current photo index
         let currentPhotoIndex = 0;
@@ -650,12 +652,6 @@
 
         const LOADING8_SHARE_BODY = `We warmly invite you to join us at the DID Graduation Show 2026.
 
-This year's Gradshow celebrates the design journeys behind the graduating cohort from the Division of Industrial Design, shaped by curiosity, rigor, and intent.
-
-The works on display sit at the intersection of play and precision, imagination and purpose. This duality reflects how our students think, make and adapt.
-
-In an ever evolving world, we stay ready for what's next.
-
 #SeeHowWeDidIt.
 
 2026 Division of Industrial Design Graduation Show — Coming Soon. Check it out!`.trim();
@@ -698,10 +694,6 @@ In an ever evolving world, we stay ready for what's next.
                 var wa = menu.querySelector('[data-share="whatsapp"]');
                 if (wa) {
                     wa.href = 'https://api.whatsapp.com/send?text=' + encodeURIComponent(line || t || u);
-                }
-                var th = menu.querySelector('[data-share="threads"]');
-                if (th) {
-                    th.href = 'https://www.threads.net/intent/post?text=' + encodeURIComponent(line || t || u);
                 }
             }
 
